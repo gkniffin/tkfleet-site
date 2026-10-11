@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TK Fleet – Callback</title></head>
+<body><h1>Authorization received</h1>
+<p>Copy the code below and hand it to your bot. It expires in a few minutes and is single-use.</p>
+<pre id="out">(no code in URL)</pre>
+<script>
+const p=new URLSearchParams(location.search);
+const c=p.get('code'),e=p.get('error');
+document.getElementById('out').textContent = c ? ('code: '+c+'\nstate: '+(p.get('state')||'')) : (e ? ('error: '+e+' '+(p.get('error_description')||'')) : '(no code in URL)');
+</script></body></html>
